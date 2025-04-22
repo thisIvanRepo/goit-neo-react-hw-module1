@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import styles from "./App.module.css";
+import Container from "./components/Container/Container";
+import Profile from "./components/Profile/Profile";
+import FriendList from "./components/FriendList/FriendList";
+import TransactionsHistory from "./components/TransactionHistory/TransactionHistory";
+import userData from "./json/userData.json";
+import friends from "./json/friends.json";
+import trnsaction from "./json/transactions.json";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <h2 className={styles.title}>TASK 1</h2>
+      <Container>
+        <Profile
+          name={userData.username}
+          tag={userData.tag}
+          location={userData.location}
+          image={userData.avatar}
+          stats={userData.stats}
+        />
+      </Container>
 
-export default App
+      <h2 className={styles.title}>TASK 2</h2>
+      <FriendList friends={friends} />
+
+      <h2 className={styles.title}>TASK 3</h2>
+      <TransactionsHistory transactions={trnsaction}/>
+    </>
+  );
+};
+
+export default App;

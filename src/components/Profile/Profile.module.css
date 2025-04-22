@@ -1,0 +1,46 @@
+.name {
+  color: black;
+  font-weight: 700;
+}
+
+.tag {
+  color: darkgray;
+}
+
+.location {
+  color: gray;
+  font-weight: 600;
+}
+
+.image {
+  display: flex;
+  object-fit: cover;
+}
+
+.userData {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.userStatus {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.userStatus li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: black;
+}
+
+.userStatus li span:nth-of-type(2) {
+  color: brown;
+  font-weight: 700;
+}

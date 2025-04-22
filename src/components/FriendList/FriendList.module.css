@@ -1,0 +1,6 @@
+.frendList {
+  margin: 0 auto;
+  max-width: fit-content;
+  display: flex;
+  gap: 20px;
+}
